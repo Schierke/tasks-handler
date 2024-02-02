@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "09f3488b-4f45-490f-ad76-1b4e155b440a",
+		"name": "Side",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8142204"
+	},
+	"item": [
+		{
+			"name": "1.0 get all tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.1 filter shifts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/tasks?filter=shifts&status=ongoing",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "shifts"
+						},
+						{
+							"key": "status",
+							"value": "ongoing"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.2 get shifts information",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/shifts?taskid=ta_2KYBTRXaORuX3y3ZQ0gKkTNGXNL",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"shifts"
+					],
+					"query": [
+						{
+							"key": "taskid",
+							"value": "ta_2KYBTRXaORuX3y3ZQ0gKkTNGXNL"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.3 get task location",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/tasks/ta_2KYBTRXaORuX3y3ZQ0gKkTNGXNL/location",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"ta_2KYBTRXaORuX3y3ZQ0gKkTNGXNL",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.4 get tasks with ops name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/tasks/ops",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"ops"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.0 update assignee",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"assignee_id\": \"bff2d01129b7e26c36d56500abf4ec7a21fc8f9132365482e22d3d86f5fe2700\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/tasks/ta_2KYBTRXaORuX3y3ZQ0gKkTNGXNL/update",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"ta_2KYBTRXaORuX3y3ZQ0gKkTNGXNL",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
