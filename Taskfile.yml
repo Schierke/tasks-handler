@@ -1,0 +1,28 @@
+version: "3"
+tasks:
+  build:
+    desc: compile code
+    cmds:
+      - go build -o bin/side
+  migrate:
+    desc: Migrate the database schema
+    deps: [build]
+    cmds:
+      - ./bin/side migrate
+  run:
+    desc: run compiled code
+    deps: [build]
+    cmds:
+      - ./bin/side serve
+  develop:
+    desc: starting docker environment
+    cmds:
+      - docker-compose -f docker-compose.dev.yml up --build
+  local:
+    desc: starting local environment, without the sever
+    cmds:
+      - docker-compose -f docker-compose.local.yml up --build
+  test:
+    desc: running all tests
+    cmds:
+      - go test -cover -v ./... -count=1
