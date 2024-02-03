@@ -26,3 +26,9 @@ tasks:
     desc: running all tests
     cmds:
       - go test -cover -v ./... -count=1
+  mocks:
+    desc: generating mocks from interface
+    cmds:
+    - |
+      mockgen -source internals/handler/task_handler.go  -destination internals/mocks/mock_task_service.go -package=mocks
+      mockgen -source internals/service/task_service.go  -destination internals/mocks/mock_task_repository.go -package=mocks
